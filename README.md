@@ -62,6 +62,26 @@ sudo pacman -S breeze-gtk breeze-icons
 sudo pacman -S breeze-icons noto-fonts
 
 
+
+KDE IF IBUS-HANGUL DON'T WORK WELL ------------------------------------
+
+sudo pacman -Rns ibus-hangul
+yay -S ibus-hangul-git
+ibus restart
+reboot
+
+sudo pacman -S fcitx5 fcitx5-hangul fcitx5-configtool
+nano ~/.pam_environment
+
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+INPUT_METHOD=fcitx5
+fcitx5-configtool
+
+Добавь там Korean - Hangul и нужную тебе английскую раскладку.
+
+
 KVM ANDROID_EMULATOR SUPPORT --------------------------------------------
 
 sudo pacman -S virt-manager qemu vde2 ebtables iptables-nft nftables dnsmasq bridge-utils ovmf
