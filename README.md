@@ -1,9 +1,7 @@
-# my_arch_scripts_setup
-only for arch linux
-
+!important It's my arch tools, use it carefully, might crash your system
 STUFF archlinux step-by-step !important ------------------
 
-sudo pacman -Syu firefox ibus-hangul telegram-desktop obsidian obs-studio qbittorrent steam fish cmake clang ninja flatpak gnome-software thunderbird ttf-fira-code ttf-roboto ttf-ubuntu-font-family noto-fonts-cjk ttf-baekmuk networkmanager pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber pavucontrol bluez bluez-utils libreoffice-still btop vlc jdk17-openjdk
+sudo pacman -Syu firefox ibus-hangul telegram-desktop obsidian obs-studio qbittorrent steam fish cmake clang ninja flatpak gnome-software thunderbird ttf-fira-code ttf-roboto ttf-ubuntu-font-family noto-fonts-cjk ttf-baekmuk networkmanager pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber pavucontrol bluez bluez-utils libreoffice-still btop vlc jdk17-openjdk ffmpegthumbs
 
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
@@ -29,6 +27,17 @@ yay -Syu android-studio visual-studio-code-bin google-chrome ttf-nanum gnu-free-
 
 flatpak install -y flathub com.github.johnfactotum.Foliate com.usebruno.Bruno net.ankiweb.Anki io.httpie.Httpie io.dbeaver.DBeaverCommunity io.github.mhogomchungu.media-downloader org.zealdocs.Zeal com.todoist.Todoist com.vysp3r.ProtonPlus ru.linux_gaming.PortProton rocks.koreader.KOReader io.github.troyeguo.koodo-reader com.github.babluboy.bookworm org.kde.arianna com.calibre_ebook.calibre dev.restfox.Restfox io.github.david_swift.Flashcards xyz.safeworlds.hiit io.gitlab.guillermop.Counters org.gnome.Loupe io.github.getnf.embellish dev.bragefuglseth.Keypunch io.github.revisto.drum-machine io.github.nate_xyz.Resonance net.lutris.Lutris
 
+
+Установка `.desktop` файлов ярлыков со ссылками -----------------------------------
+
+1. Переместить applications в папку приложений по пути:
+~/.local/share/applications/
+
+2. Сделать его исполняемым:
+
+chmod +x ~/.local/share/applications/*.desktop
+
+WINE --------------------------------------------
 
 sudo pacman -Syu \
 wine wine-mono wine-gecko winetricks \
@@ -60,26 +69,6 @@ sudo pacman -S gtk2 gtk3 gtk4
 sudo pacman -S gtk-engine-murrine
 sudo pacman -S breeze-gtk breeze-icons
 sudo pacman -S breeze-icons noto-fonts
-
-
-
-KDE IF IBUS-HANGUL DON'T WORK WELL ------------------------------------
-
-sudo pacman -Rns ibus-hangul
-yay -S ibus-hangul-git
-ibus restart
-reboot
-
-sudo pacman -S fcitx5 fcitx5-hangul fcitx5-configtool
-nano ~/.pam_environment
-
-GTK_IM_MODULE=fcitx
-QT_IM_MODULE=fcitx
-XMODIFIERS=@im=fcitx
-INPUT_METHOD=fcitx5
-fcitx5-configtool
-
-Добавь там Korean - Hangul и нужную тебе английскую раскладку.
 
 
 KVM ANDROID_EMULATOR SUPPORT --------------------------------------------
