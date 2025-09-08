@@ -41,10 +41,14 @@ FCITX5 -------------------------------------------------------------------------
 
 sudo pacman -Syu
 sudo pacman -S fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-hangul   
-# опционально, по языкам:
-# sudo pacman -S fcitx5-mozc    # Japanese
-# sudo pacman -S fcitx5-rime    # Rime (Chinese)
-# sudo pacman -S fcitx5-hangul  # Hangul (Korean)
+
+опционально, по языкам:
+
+sudo pacman -S fcitx5-mozc     Japanese
+
+sudo pacman -S fcitx5-rime     Rime (Chinese)
+
+sudo pacman -S fcitx5-hangul   Hangul (Korean)
 
 System Settings → Input Devices → Virtual Keyboard и выберите Fcitx 5 (KWin запустит процесс правильно в Wayland).
 
@@ -53,21 +57,31 @@ code ~/.config/environment.d/fcitx5.conf
 Paste inside file 
 
 GTK_IM_MODULE=fcitx
+
 QT_IM_MODULE=fcitx
+
 XMODIFIERS=@im=fcitx
+
 INPUT_METHOD=fcitx
+
 SDL_IM_MODULE=fcitx
 
 
 mkdir -p ~/.config/autostart  
+
 cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/   
 
 
 [Hotkey/TriggerKeys]
+
 0=Super+space
+
 1=Zenkaku_Hankaku
+
 2=Hangul
+
 3=Shift+space
+
 4=Control+space
 
 WINE --------------------------------------------
