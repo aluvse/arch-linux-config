@@ -45,9 +45,7 @@ sudo pacman -S fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-hangul
 опционально, по языкам:
 
 sudo pacman -S fcitx5-mozc     Japanese
-
 sudo pacman -S fcitx5-rime     Rime (Chinese)
-
 sudo pacman -S fcitx5-hangul   Hangul (Korean)
 
 System Settings → Input Devices → Virtual Keyboard и выберите Fcitx 5 (KWin запустит процесс правильно в Wayland).
@@ -57,13 +55,9 @@ code ~/.config/environment.d/fcitx5.conf
 Paste inside file 
 
 GTK_IM_MODULE=fcitx
-
 QT_IM_MODULE=fcitx
-
 XMODIFIERS=@im=fcitx
-
 INPUT_METHOD=fcitx
-
 SDL_IM_MODULE=fcitx
 
 
@@ -75,14 +69,37 @@ cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/
 [Hotkey/TriggerKeys]
 
 0=Super+space
-
 1=Zenkaku_Hankaku
-
 2=Hangul
-
 3=Shift+space
-
 4=Control+space
+
+
+Context menu for kde-plasma VSCODE --------------------------------------------------------------
+
+
+mkdir -p ~/.local/share/kio/servicemenus
+cat > ~/.local/share/kio/servicemenus/open-with-vscode.desktop <<'EOF'
+[Desktop Entry]
+Type=Service
+MimeType=inode/directory;application/octet-stream;text/plain;
+Actions=openWithVSCode
+X-KDE-Priority=TopLevel
+Name=Open with Visual Studio Code
+Icon=visual-studio-code
+
+[Desktop Action openWithVSCode]
+Name=Open with Visual Studio Code
+Icon=visual-studio-code
+Exec=/usr/bin/code %F
+EOF
+
+chmod +x ~/.local/share/kio/servicemenus/open-with-vscode.desktop
+
+    Перезапусти Dolphin (закрой все окна Dolphin и запусти снова). Если хочешь — можно сделать так:
+
+killall dolphin 2>/dev/null || true
+dolphin & disown
 
 WINE --------------------------------------------
 
