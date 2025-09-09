@@ -114,14 +114,24 @@ dolphin & disown
 
 Add DNS SERVER except local ---------------------------------------------------------------------------
 
+nmcli connection show 
+
+nmcli con mod "Wired connection 1" ipv4.dns "1.1.1.1,1.0.0.1,192.168.1.1,8.8.8.8,8.8.4.4"
+nmcli con mod "Wired connection 1" ipv4.dns-search "localnet"
+nmcli con mod "Wired connection 1" ipv4.ignore-auto-dns yes
+nmcli con up "Wired connection 1"
+cat /etc/resolv.conf
+
+
+nmcli con mod "Wired connection 1" ipv4.dns "192.168.1.1,1.1.1.1,8.8.8.8"
+
+
 code /etc/resolv.conf  
 
 below localnet if you have one
 
 nameserver 1.1.1.1
 nameserver 8.8.8.8
-nameserver 1.0.0.1
-nameserver 8.8.4.4
 
 sudo pacman -Syy for update changes
 
