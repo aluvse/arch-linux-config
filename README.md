@@ -1,7 +1,11 @@
-!important It's my arch tools, use it carefully, might crash your system
+# How to use?
+### 1. better download as txt and open, it wasn't make as .md style
+### 2. be careful and read every line, it might destroy your system
+### 3. think twice before using someones script from internet
+
 STUFF archlinux step-by-step !important ------------------
 
-sudo pacman -Syu firefox ibus-hangul telegram-desktop obsidian obs-studio qbittorrent steam fish cmake clang ninja flatpak gnome-software thunderbird ttf-fira-code ttf-roboto ttf-ubuntu-font-family noto-fonts-cjk ttf-baekmuk networkmanager pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber pavucontrol bluez bluez-utils libreoffice-still btop vlc jdk17-openjdk ffmpegthumbs
+sudo pacman -Syu firefox ibus-hangul telegram-desktop obsidian obs-studio qbittorrent steam fish cmake clang ninja flatpak gnome-software thunderbird ttf-fira-code ttf-roboto ttf-ubuntu-font-family noto-fonts-cjk ttf-baekmuk networkmanager pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber pavucontrol bluez bluez-utils libreoffice-still btop jdk17-openjdk ffmpegthumbs
 
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
@@ -40,7 +44,7 @@ chmod +x ~/.local/share/applications/*.desktop
 FCITX5 -----------------------------------------------------------------------------------------
 
 sudo pacman -Syu
-sudo pacman -S fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-hangul   
+sudo pacman -S fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt fcitx5-hangul
 
 опционально, по языкам:
 
@@ -50,9 +54,9 @@ sudo pacman -S fcitx5-hangul   Hangul (Korean)
 
 System Settings → Input Devices → Virtual Keyboard и выберите Fcitx 5 (KWin запустит процесс правильно в Wayland).
 
-code ~/.config/environment.d/fcitx5.conf    
+code ~/.config/environment.d/fcitx5.conf
 
-Paste inside file 
+Paste inside file
 
 GTK_IM_MODULE=fcitx
 QT_IM_MODULE=fcitx
@@ -61,9 +65,12 @@ INPUT_METHOD=fcitx
 SDL_IM_MODULE=fcitx
 
 
-mkdir -p ~/.config/autostart  
+mkdir -p ~/.config/autostart
 
-cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/   
+cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/
+
+
+code ~/.config/fcitx5/config
 
 
 [Hotkey/TriggerKeys]
@@ -100,6 +107,9 @@ chmod +x ~/.local/share/kio/servicemenus/open-with-vscode.desktop
 
 killall dolphin 2>/dev/null || true
 dolphin & disown
+
+
+
 
 WINE --------------------------------------------
 
