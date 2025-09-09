@@ -1,7 +1,9 @@
 # How to use?
-### 1. better download as txt and open, it wasn't make as .md style
-### 2. be careful and read every line, it might destroy your system
-### 3. think twice before using someones script from internet
+#### 1. better download as txt and open, it wasn't make as .md style
+#### 2. be careful and read every line, it might destroy your system
+#### 3. think twice before using someones script from internet
+
+## Have fun it's just another guys arch script
 
 STUFF archlinux step-by-step !important ------------------
 
