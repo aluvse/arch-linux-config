@@ -112,6 +112,19 @@ dolphin & disown
 
 
 
+Add DNS SERVER except local ---------------------------------------------------------------------------
+
+code /etc/resolv.conf  
+
+below localnet if you have one
+
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+nameserver 1.0.0.1
+nameserver 8.8.4.4
+
+
+
 
 WINE --------------------------------------------
 
