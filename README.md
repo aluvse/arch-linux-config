@@ -136,6 +136,28 @@ nameserver 8.8.8.8
 sudo pacman -Syy for update changes
 
 
+DOCKER INSTALLATION -------------------------------------------------------------------------
+
+
+sudo pacman -S docker docker-compose docker-buildx
+
+sudo systemctl enable docker.service
+sudo systemctl enable docker.socket
+sudo systemctl start docker.socket
+sudo systemctl start docker.service
+
+sudo systemctl status docker.service
+
+sudo usermod -aG docker bart
+
+groups bart
+
+newgrp docker
+
+docker run hello-world
+
+sudo reboot
+
 WINE --------------------------------------------
 
 sudo pacman -Syu \
