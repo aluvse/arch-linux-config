@@ -1,11 +1,3 @@
-# How to use?
-#### 1. better download as txt and open, it wasn't make as .md style
-#### 2. be careful and read every line, it might destroy your system
-#### 3. think twice before using someones script from internet
-
-## Have fun it's just another guys arch script
-
-STUFF archlinux step-by-step !important ------------------
 
 sudo pacman -Syu firefox ibus-hangul telegram-desktop obsidian obs-studio qbittorrent steam fish cmake clang ninja flatpak gnome-software thunderbird ttf-fira-code ttf-roboto ttf-ubuntu-font-family noto-fonts-cjk ttf-baekmuk networkmanager pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber pavucontrol bluez bluez-utils libreoffice-still btop jdk17-openjdk ffmpegthumbs
 
