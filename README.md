@@ -23,8 +23,11 @@ curl -fsSL https://ollama.com/install.sh | sh
 yay -Syu android-studio visual-studio-code-bin google-chrome ttf-nanum gnu-free-fonts noto-fonts ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-ibm-plex ttf-input ttf-input-nerd ttf-liberation ttf-roboto gobject-introspection python-setuptools python-wheel meson
 
 
-yay -Syu goland goland-jre webstorm webstorm-jre clion clion-jre clion-cmake phpstorm phpstorm-jre rustrover rustrover-jre rider pycharm-professional intellij-idea-ultimate-edition datagrip datagrip-jre
+Carefull -------------------------------
 
+
+yay -Syu goland goland-jre webstorm webstorm-jre clion clion-jre clion-cmake phpstorm phpstorm-jre rustrover rustrover-jre rider pycharm-professional intellij-idea-ultimate-edition datagrip datagrip-jre
+echo "IgnorePkg = goland goland-jre webstorm webstorm-jre clion clion-jre clion-cmake phpstorm phpstorm-jre rustrover rustrover-jre rider pycharm-professional intellij-idea-ultimate-edition datagrip datagrip-jre" | sudo tee -a /etc/pacman.conf
 
 
 
