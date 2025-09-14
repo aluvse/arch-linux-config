@@ -1,3 +1,4 @@
+Carefull -------------------------------
 
 sudo pacman -Syu firefox ibus-hangul telegram-desktop obsidian qbittorrent steam fish cmake clang ninja flatpak gnome-software thunderbird ttf-fira-code ttf-roboto ttf-ubuntu-font-family noto-fonts-cjk ttf-baekmuk networkmanager pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber pavucontrol bluez bluez-utils libreoffice-still btop jdk17-openjdk ffmpegthumbs
 
@@ -22,13 +23,10 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 yay -Syu android-studio visual-studio-code-bin google-chrome ttf-nanum gnu-free-fonts noto-fonts ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-ibm-plex ttf-input ttf-input-nerd ttf-liberation ttf-roboto gobject-introspection python-setuptools python-wheel meson
 
-
-Carefull -------------------------------
-
+JetBrainsIDE Depends what you use -----------------------------------------------
 
 yay -Syu goland goland-jre webstorm webstorm-jre clion clion-jre clion-cmake phpstorm phpstorm-jre rustrover rustrover-jre rider pycharm-professional intellij-idea-ultimate-edition datagrip datagrip-jre
 echo "IgnorePkg = goland goland-jre webstorm webstorm-jre clion clion-jre clion-cmake phpstorm phpstorm-jre rustrover rustrover-jre rider pycharm-professional intellij-idea-ultimate-edition datagrip datagrip-jre" | sudo tee -a /etc/pacman.conf
-
 
 
 flatpak install -y flathub com.github.johnfactotum.Foliate com.usebruno.Bruno net.ankiweb.Anki io.httpie.Httpie io.dbeaver.DBeaverCommunity io.github.mhogomchungu.media-downloader org.zealdocs.Zeal com.todoist.Todoist com.vysp3r.ProtonPlus ru.linux_gaming.PortProton rocks.koreader.KOReader io.github.troyeguo.koodo-reader com.github.babluboy.bookworm org.kde.arianna com.calibre_ebook.calibre dev.restfox.Restfox io.github.david_swift.Flashcards xyz.safeworlds.hiit io.gitlab.guillermop.Counters org.gnome.Loupe io.github.getnf.embellish dev.bragefuglseth.Keypunch io.github.revisto.drum-machine io.github.nate_xyz.Resonance net.lutris.Lutris flathub org.videolan.VLC com.protonvpn.www
@@ -114,27 +112,17 @@ dolphin & disown
 
 Add DNS SERVER except local ---------------------------------------------------------------------------
 
-nmcli connection show 
+# IPv4 DNS (your original setup)
+nmcli con mod "Wired connection 1" ipv4.dns "9.9.9.9 1.1.1.1 223.5.5.5"
 
-nmcli con mod "Wired connection 1" ipv4.dns "1.1.1.1,1.0.0.1,192.168.1.1,8.8.8.8,8.8.4.4"
-nmcli con mod "Wired connection 1" ipv4.dns-search "localnet"
-nmcli con mod "Wired connection 1" ipv4.ignore-auto-dns yes
-nmcli con up "Wired connection 1"
-cat /etc/resolv.conf
+# IPv6 DNS (new equivalent servers)
+nmcli con mod "Wired connection 1" ipv6.dns "2620:fe::fe 2606:4700:4700::1111 2400:3200::1"
 
+# Make sure IPv6 is enabled
+nmcli con mod "Wired connection 1" ipv6.method "auto"
 
-nmcli con mod "Wired connection 1" ipv4.dns "192.168.1.1,1.1.1.1,8.8.8.8"
-
-
-code /etc/resolv.conf  
-
-below localnet if you have one
-
-nameserver 1.1.1.1
-nameserver 8.8.8.8
-
-sudo pacman -Syy for update changes
-
+# Apply changes
+nmcli con down "Wired connection 1" && nmcli con up "Wired connection 1"
 
 DOCKER INSTALLATION -------------------------------------------------------------------------
 
